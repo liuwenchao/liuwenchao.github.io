@@ -1,5 +1,5 @@
 $(function() {
-  var static = false; // if this is served via static sites.
+  var static = true; // if this is served via static sites.
   // inspiref from: https://github.com/pereorga/jQuery-Mobile-Phone-guide/
   var inc = 0;
   var count = 0;
