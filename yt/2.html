@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yottaly, a marketplace for services on Internet.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Yottaly market marketplace internet web software service product" />
+    <meta name="description" content="Yottaly is a marketplace for products or services on Internet." />
+
+    <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://getbootstrap.com/assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://getbootstrap.com/assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://getbootstrap.com/assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://getbootstrap.com/assets/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="http://getbootstrap.com/assets/ico/apple-touch-icon-57-precomposed.png"> -->
+    <link rel="shortcut icon" href="favicon.ico">
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Yottaly</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Our story</li>
+                <li><a href="#">Philosophy</a></li>
+                <li><a href="#">Team</a></li>
+              </ul>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-left" role="search">
+            <div class="form-group">
+              <input type="search" id="inputsearch" class="form-control" style="width: 400px;" placeholder="Search by keywords"/>
+            </div>
+            <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                Or Browse by Popular Tags <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Social</a></li>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Collaboration</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>You can't image what service the Internet has!</h1>
+              <p>The Internet is full of great services and it's growing, rapidly. Browse, search and experience for the wonderness that you should know earlier.</p>
+              <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Second slide" alt="Second slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Have a startup?</h1>
+              <p>Expose your excellent service here and power it up quickly. You will not meet  major customers at your home door, not even with help from advertisement of digital media.</p>
+              <p><a class="btn btn-large btn-primary" href="#">Sign up for free</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Third slide" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Want to start up?</h1>
+              <p>Dive into our market to see where is the gap, or subscribe to our reports.</p>
+              <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+    <div class="container">
+      <div class="row" id="list"></div>
+      <hr class="featurette-divider">
+
+      <footer>
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+    <script src="http://getbootstrap.com/assets/js/jquery.js"></script>
+    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="http://getbootstrap.com/assets/js/holder.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript">
+      function template_row(data, display) {
+        return '<div class="col-lg-4"'+display+
+          //'<img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="icon for '+data.title+'">'+
+          '<h2><img src="http://'+data.uri+'/favicon.ico" alt="Favicon" />'+data.title+'</h2>'+
+          '<p>'+data.about+'</p>'+
+          '<p><a class="btn btn-default" href="#" onclick="return show_modal(\''+data.url+'\');">View details &raquo;</a></p>'+
+        '</div>';
+      }
+    </script>
+  </body>
+</html>
+
