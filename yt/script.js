@@ -1,4 +1,4 @@
-$(function() {
+;$(function() {
   var static = true; // if this is served via static sites.
   // inspiref from: https://github.com/pereorga/jQuery-Mobile-Phone-guide/
   var inc = 0;
@@ -14,7 +14,10 @@ $(function() {
     var url = 'products.json?from='+limit;
     var search = encodeURIComponent($input.val());
     if (search) {
-         url += '&title=' + search;
+      $('#myCarousel').hide();
+      url += '&title=' + search;
+    } else {
+      $('#myCarousel').show();
     }
 
     $.getJSON(url, function(data) {
@@ -65,6 +68,9 @@ $(function() {
   search_json(0);
   $input.focus();
 
+  //
+  //$('#site_json_example').popover();
+
 });
 
 function show_modal(url) {
@@ -80,7 +86,7 @@ function show_modal(url) {
               data.about+
             '</div>'+
             '<div class="modal-footer">'+
-              '<img src="http://'+data.uri+'/favicon.ico" alt="Favicon" /><a href="http://'+data.uri+'" target="external">'+data.uri+'</a>'+
+              '<img style="width:14px;margin-right:5px;" src="http://'+data.uri+'/favicon.ico" alt="Favicon" /><a href="http://'+data.uri+'" target="external">'+data.uri+'</a>'+
             '</div>'+
           '</div>'+
         '</div>'+

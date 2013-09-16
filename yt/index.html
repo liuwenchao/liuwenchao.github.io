@@ -21,45 +21,15 @@
     <link rel="apple-touch-icon-precomposed" href="http://getbootstrap.com/assets/ico/apple-touch-icon-57-precomposed.png"> -->
     <link rel="shortcut icon" href="favicon.ico">
     <style type="text/css">
-    /* GLOBAL STYLES
-    -------------------------------------------------- */
-    /* Padding below the footer and lighter body text */
-
-    body {
-      padding-bottom: 40px;
-      color: #5a5a5a;
-    }
-
-
-
-    /* CUSTOMIZE THE NAVBAR
-    -------------------------------------------------- */
-
-    /* Special class on .container surrounding .navbar, used for positioning it into place. */
-    .navbar-wrapper {
-      position: relative;
-      z-index: 15;
-    }
-
-
     /* CUSTOMIZE THE CAROUSEL
     -------------------------------------------------- */
-
-    /* Carousel base class */
-    .carousel {
-      margin-bottom: 60px;
-
-      /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
-      margin-top: -90px;
-    }
-    /* Since positioning the image, we need to help out the caption */
-    .carousel-caption {
-      z-index: 10;
+    body {
+      margin-top: 50px;
     }
 
     /* Declare heights because of positioning of img element */
     .carousel .item {
-      height: 500px;
+      height: 400px;
       background-color: #777;
     }
     .carousel-inner > .item > img {
@@ -67,70 +37,13 @@
       top: 0;
       left: 0;
       min-width: 100%;
-      height: 500px;
+      height: 400px;
     }
-
-
-
-    /* MARKETING CONTENT
-    -------------------------------------------------- */
-
-    /* Pad the edges of the mobile views a bit */
-    .marketing {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    /* Center align the text within the three columns below the carousel */
-    .marketing .col-lg-4 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .marketing h2 {
-      font-weight: normal;
-    }
-    .marketing .col-lg-4 p {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-
-
-    /* Featurettes
-    ------------------------- */
-
-    .featurette-divider {
-      margin: 80px 0; /* Space out the Bootstrap <hr> more */
-    }
-
-    /* Thin out the marketing headings */
-    .featurette-heading {
-      font-weight: 300;
-      line-height: 1;
-      letter-spacing: -1px;
-    }
-
-
 
     /* RESPONSIVE CSS
     -------------------------------------------------- */
 
     @media (min-width: 768px) {
-
-      /* Remove the edge padding needed for mobile */
-      .marketing {
-        padding-left: 0;
-        padding-right: 0;
-      }
-
-      /* Navbar positioning foo */
-      .navbar-wrapper {
-        margin-top: 20px;
-      }
-      /* The navbar becomes detached from the top, so we round the corners */
-      .navbar-wrapper .navbar {
-        border-radius: 4px;
-      }
-
       /* Bump up size of carousel content */
       .carousel-caption p {
         margin-bottom: 20px;
@@ -138,16 +51,6 @@
         line-height: 1.4;
       }
 
-      .featurette-heading {
-        font-size: 50px;
-      }
-
-    }
-
-    @media (min-width: 992px) {
-      .featurette-heading {
-        margin-top: 120px;
-      }
     }
 
     </style>
@@ -166,18 +69,9 @@
           <a class="navbar-brand" href="#">Yottaly</a>
         </div>
         <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Our story</li>
-                <li><a href="#">Philosophy</a></li>
-                <li><a href="#">Team</a></li>
-              </ul>
-            </li>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a data-toggle="modal" href="#registerModal">Register</a></li>
+            <!-- <li><a href="#login">Login</a></li> -->
           </ul>
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
@@ -195,6 +89,13 @@
                 <li><a href="#">Blog</a></li>
               </ul>
             </div>
+            
+            <!-- 
+            <form class="navbar-form pull-right">
+              <input class="span2" type="text" placeholder="Email">
+              <input class="span2" type="password" placeholder="Password">
+              <button type="submit" class="btn">Sign in</button>
+            </form> -->
           </form>
         </div>
       </div>
@@ -216,9 +117,9 @@
             <div class="carousel-caption">
               <h1>Need something from Internet?</h1>
               
-              <p>The Internet is full of intelligence and miracles, and it's growing rapidly. People just dont know most of them and have no way to find them when they need. Occasially a great service in need is heard from the media, but <span class="label label-danger">Why can't I find it ealier by myself?</span></p>
+              <p>The Internet is full of intelligence and miracles, and it's growing rapidly. People just dont know most of them and have no way to find them when they need. Occasially a great one in need is heard from the media, but <br /><span class="label label-danger">Why can't I find it ealier by myself?</span></p>
               
-              <p><a class="btn btn-large btn-primary" href="#">Yottaly works with Enterpreneurs all over the world, Meet them Now.</a></p>
+              <p><a class="btn btn-lg btn-primary" href="#">Yottaly works with Enterpreneurs all over the world, Meet them Now.</a></p>
             </div>
           </div>
         </div>
@@ -228,8 +129,8 @@
             <div class="carousel-caption">
               <h1>Have a startup?</h1>
 
-              <p>Enterpreneurs work very hard to release a very good service, then buy some advertisement, post articles on digital media and attend all kinds of activities to annouce the existance, but progress is slow. <span class="label label-danger">Where are the customers?</span></p>
-              <p><a class="btn btn-large btn-primary" href="#">This is where customers with needs will come, Sign up for free</a></p>
+              <p>Enterpreneurs work very hard to release a very good product, then buy some advertisement, post articles on digital media and attend all kinds of activities to annouce the existance, but progress is slow. <br /><span class="label label-danger">Where are the customers?</span></p>
+              <p><a data-toggle="modal" href="#registerModal" class="btn btn-lg btn-primary" href="#">This is where customers with needs will come, Sign up for free</a></p>
             </div>
           </div>
         </div>
@@ -239,11 +140,11 @@
             <div class="carousel-caption">
               <h1>Want to start up?</h1>
               <p>
-                <span class="label label-danger"> Where is the gap?</span>
-                <span class="label label-danger"> What people really need?</span> 
+                <span class="label label-danger"> Where is the gap?</span><br />
+                <span class="label label-danger"> What do people really need?</span> <br />
                 <span class="label label-danger"> How can I see the big picture?</span>
               </p>
-              <p><a class="btn btn-large btn-primary" href="#">Dive into our market or subscribe to our reports.</a></p>
+              <p><a class="btn btn-lg btn-primary" href="#">Dive into our market or subscribe to our reports.</a></p>
             </div>
           </div>
         </div>
@@ -258,7 +159,12 @@
 
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2013 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2013 Yottaly, Inc. 
+          &middot; <a href="#">Privacy</a> 
+          &middot; <a href="#">Terms</a>
+          &middot; <a href="#">About</a>
+          &middot; <a href="#">Team</a>
+        </p>
       </footer>
 
     </div><!--/.fluid-container-->
@@ -270,12 +176,97 @@
       function template_row(data, display) {
         return '<div class="col-lg-4"'+display+
           //'<img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="icon for '+data.title+'">'+
-          '<h2><img src="http://'+data.uri+'/favicon.ico" alt="Favicon" />'+data.title+'</h2>'+
+          '<h2><!--img style="width:30px;margin-right:5px;" src="http://'+data.uri+'/favicon.ico" alt="Favicon" /-->'+data.title+'</h2>'+
           '<p>'+data.about+'</p>'+
           '<p><a class="btn btn-default" href="#" onclick="return show_modal(\''+data.url+'\');">View details &raquo;</a></p>'+
         '</div>';
       }
     </script>
+    <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">Register your website</h4>
+          </div>
+          <div class="modal-body">
+            <p>Just prepare a site.json from your site and paste the link below, you will get An Yottaly account with email in your json as the username, and an confirmation message in the email box. </p>
+            <p>By doing so, we confirm you own the website.</p>
+            </ul>
+            <form>
+              <div class="input-group">
+                <span class="input-group-addon"><a data-toggle="collapse" href="#site_json_example" title="Click to See an example">
+                    site.json
+                  </a></span>
+                <input type="text" id="site_json_input" class="form-control" placeholder="http://yourdomain.com/site.json">
+              </div>
+            </form>
+            <div class="panel panel-default">
+              <div id="site_json_example" class="panel-collapse collapse">
+                <div class="panel-body">
+                  JSON example:
+                  <ul class="list-group">
+                    <li class="list-group-item">name and email are required, you can change the email address after account is activated.</li>
+                    <li class="list-group-item">Any key-value pairs in the first level will be displayed in the main tab.</li>
+                    <li class="list-group-item">Any key-object pairs in the first level will be displayed in a new tab.</li>
+                  </ul>
+                  <textarea class="form-control" rows="20">
+{
+  "name": "KanbanSystem",
+  "email": "info@kanbansystem.com",
+  "description": "A kanban system that help imporove the collaborations in corps.",
+  "pricing": {
+    "Basic" : {
+      "price": 0,
+      "charge frequency": "monthly",
+      "room chat": true,
+      "kanban list": true,
+      "email notificaqtion": true,
+      "integration with Github project": true,
+      "customized domain": false,
+      "telephone and onsite support": false
+    }, 
+    "Advanced": {
+      "price": 19.99,
+      "charge frequency": "monthly",
+      "room chat": true,
+      "kanban list": true,
+      "email notificaqtion": true,
+      "integration with Github project": true,
+      "customized domain": trie,
+      "telephone and onsite support": false
+    }, 
+    "Expert":  {
+      "price": 49.99,
+      "charge frequency": "monthly",
+      "room chat": true,
+      "kanban list": true,
+      "email notificaqtion": true,
+      "integration with Github project": true,
+      "customized domain": true,
+      "telephone and onsite support": true
+    }
+  },
+  "contact": {
+    "Address": "1234 Water Way, Orange City, Pear Republic",
+    "Telephone": "1-800-1234567",
+    "Fax": "1-800-1234567",
+    "Email": "support@kanbansystem.com",
+    "Twitter": "kanbansystem",
+    "Facebook": "kanbansystem"
+  }
+}
+                  </textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
-
