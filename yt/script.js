@@ -83,7 +83,7 @@ function show_modal(url) {
               '<h4 class="modal-title">'+data.title+'</h4>'+
             '</div>'+
             '<div class="modal-body">'+
-              data.about+
+              parse_data(data)+
             '</div>'+
             '<div class="modal-footer">'+
               '<img style="width:14px;margin-right:5px;" src="http://'+data.uri+'/favicon.ico" alt="Favicon" /><a href="http://'+data.uri+'" target="external">'+data.uri+'</a>'+
@@ -95,3 +95,79 @@ function show_modal(url) {
   });
   return false;
 };
+
+function load_json(e) {
+  if (e.value.length === 0) {
+    $('#site_json_result textarea').text("");
+    return false;
+  }
+  $.getJSON(e.value).done(function(data) {
+    $('#site_json_result textarea').text(JSON.stringify(data, null, 4));
+  }).fail(function(jqxhr, textStatus, error) {
+    $('#site_json_result textarea').text(textStatus + ", " + error);
+  });
+};
+
+function parse_data(data) {
+  var result = [];
+  $.each(data, function(k, v) {
+    if (typeof v === "string") {
+      result.push(render_string(k, v)); 
+    } else if (Array.isArray(v)) {
+      result.push(render_array(k, v)); 
+    } else if (typeof v === "object"){
+      result.push(render_object(k, v));
+    } else {
+      result.push(render_string(k, v)); 
+    }
+  });
+  return result.join('');
+}
+
+function render_array(k, v) {
+  var result = ['<div class="panel panel-default">',
+  '<div class="panel-heading">',k,'</div>',
+  '<div class="panel-body">', '<ul class="list-group">'];
+  $.each(v, function(i, e) {
+    result.push('<li class="list-group-item">');
+    result.push(e);
+    result.push('</li>');
+  });
+  result.push('</ul></div></div>');
+  return result.join('');
+}
+
+function render_object(k, v) {
+  var result = ['<div class="panel panel-default">',
+  '<div class="panel-heading">',k,'</div>',
+  '<div class="panel-body">', '<ul class="nav nav-tabs">'];
+  var counter=0;
+  $.each(v, function(i, e) {
+    result.push('<li');
+    if (counter === 0) {
+      result.push(' active');
+    }
+    result.push('><a href="#'+i+'" data-toggle="tab">');
+    result.push(i);
+    result.push('</a></li>');
+    counter++;
+  });
+  result.push('</ul><div class="tab-content">');
+  counter=0;
+  $.each(v, function(i, e) {
+    result.push('<div class="tab-pane');
+    if (counter === 0) {
+      result.push(' active');
+    }
+    result.push('" id="'+i+'">');
+    result.push(e);
+    result.push('</div>');
+    counter++;
+  });
+  result.push('</div></ul></div></div>');
+  return result.join('');
+}
+
+function render_string(k, v) {
+  return '<div class="well">'+k+': '+v+'</div>';
+}

@@ -75,7 +75,7 @@
           </ul>
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
-              <input type="search" id="inputsearch" class="form-control" placeholder="Search by keywords"/>
+              <input type="search" id="inputsearch" class="form-control" placeholder="Search by keywords" onblur="if (this.value.length===0) $('#myCarousel').show();"/>
             </div>
             <div class="btn-group">
               <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
@@ -119,7 +119,7 @@
               
               <p>The Internet is full of intelligence and miracles, and it's growing rapidly. People just dont know most of them and have no way to find them when they need. Occasially a great one in need is heard from the media, but <br /><span class="label label-danger">Why can't I find it ealier by myself?</span></p>
               
-              <p><a class="btn btn-lg btn-primary" href="#">Yottaly works with Enterpreneurs all over the world, Meet them Now.</a></p>
+              <p><a class="btn btn-lg btn-primary" href="#" onclick="$('#inputsearch').focus(); $('#myCarousel').hide(); return false;">Yottaly works with Enterpreneurs all over the world, Meet them Now.</a></p>
             </div>
           </div>
         </div>
@@ -144,7 +144,7 @@
                 <span class="label label-danger"> What do people really need?</span> <br />
                 <span class="label label-danger"> How can I see the big picture?</span>
               </p>
-              <p><a class="btn btn-lg btn-primary" href="#">Dive into our market or subscribe to our reports.</a></p>
+              <p><a class="btn btn-lg btn-primary" href="#" onclick="$('#inputsearch').focus(); $('#myCarousel').hide(); return false;">Dive into our market or subscribe to our reports.</a></p>
             </div>
           </div>
         </div>
@@ -170,7 +170,6 @@
     </div><!--/.fluid-container-->
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
-    <script src="http://getbootstrap.com/assets/js/holder.js"></script>
     <script src="script.js"></script>
     <script type="text/javascript">
       function template_row(data, display) {
@@ -195,16 +194,20 @@
             </ul>
             <form>
               <div class="input-group">
-                <span class="input-group-addon"><a data-toggle="collapse" href="#site_json_example" title="Click to See an example">
+                <span class="input-group-addon">
                     site.json
-                  </a></span>
-                <input type="text" id="site_json_input" class="form-control" placeholder="http://yourdomain.com/site.json">
+                </span>
+                <input type="text" id="site_json_input" class="form-control" placeholder="http://yourdomain.com/site.json" onblur="load_json(this);">
               </div>
             </form>
-            <div class="panel panel-default">
-              <div id="site_json_example" class="panel-collapse collapse">
-                <div class="panel-body">
-                  JSON example:
+            <div class="panel-group" id="myAccordion">
+              <div id="site_json_example" class="panel panel-default" data-parent="#myAccordin">
+                <div class="panel-heading">
+                  <a class="accordion-toggle" data-toggle="collapse" data-parent="#myAccordion" href="#collapseOne">
+                    Click to see an Example of about.json
+                  </a>
+                </div>
+                <div id="collapseOne" class="panel-body panel-collapse collapse">
                   <ul class="list-group">
                     <li class="list-group-item">name and email are required, you can change the email address after account is activated.</li>
                     <li class="list-group-item">Any key-value pairs in the first level will be displayed in the main tab.</li>
@@ -260,9 +263,18 @@
                 </div>
               </div>
             </div>
+            <div id="site_json_result" class="panel panel-default" >
+              <div class="panel-heading">
+                <a class="accordion-toggle" data-toggle="collapse" data-parent="#myAccordion" href="#collapseTwo">
+                  Click to verify your about.json after paste the URL.
+                </a>
+              </div>
+              <div id="collapseTwo" class="panel-body panel-collapse collapse">
+                <textarea class="form-control" rows="20"></textarea>
+              </div>
+            </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Submit</button>
           </div>
         </div>
