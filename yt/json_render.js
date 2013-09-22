@@ -1,3 +1,4 @@
+//TODO table map tree
 var json_render = function(data) {
     this.properties;
     this.name;
@@ -61,13 +62,13 @@ function render_object(k, v) {
   }
   
   var counter=0;
-  var token = Math.floor(Math.random() * 10000 + 100);
+  var token = Math.floor(Math.random() * 10000 + 1);
   $.each(v, function(i, e) {
     result.push('<li');
     if (counter === 0) {
       result.push(' class="active"');
     }
-    result.push('><a href="#'+token + sanitize(i)+'" data-toggle="tab">');
+    result.push('><a href="#'+token + counter+'" data-toggle="tab">');
     result.push(sanitize(i));
     result.push('</a></li>');
     counter++;
@@ -79,7 +80,7 @@ function render_object(k, v) {
     if (counter === 0) {
       result.push(' active');
     }
-    result.push('" id="'+token + sanitize(i)+'"><div class="panel-body">');
+    result.push('" id="'+token + counter+'"><div class="panel-body">');
     result.push(render(null, e, []));
     result.push('</div></div>');
     counter++;
@@ -101,6 +102,11 @@ function render_string(k, v) {
 
 function sanitize(str) {
   //FIXME not perfect.
-  return $('<span/>').text(str).html();
   //return str;
+  return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
 }

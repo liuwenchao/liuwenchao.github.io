@@ -190,15 +190,15 @@
             <h4 class="modal-title">Register your website</h4>
           </div>
           <div class="modal-body">
-            <p>Just prepare a site.json from your site and paste the link below, you will get An Yottaly account with email in your json as the username, and an confirmation message in the email box. </p>
+            <p>Just prepare a JSONP call:site.json from your site and paste the link below, you will get An Yottaly account with email in your json as the username, and an confirmation message in the email box. </p>
             <p>By doing so, we confirm you own the website.</p>
             </ul>
-            <form>
+            <form action="yii/dishpicker/index.php?r=sites">
               <div class="input-group">
                 <span class="input-group-addon">
                     site.json
                 </span>
-                <input type="text" id="site_json_input" class="form-control" placeholder="http://yourdomain.com/site.json" onblur="load_json(this);">
+                <input type="text" id="site_json_input" class="form-control" placeholder="http://yourdomain.com/site.json?callback=?" onblur="load_json(this);">
               </div>
             </form>
             <div class="panel-group" id="myAccordion">
@@ -210,16 +210,19 @@
                 </div>
                 <div id="collapseOne" class="panel-body panel-collapse collapse">
                   <ul class="list-group">
-                    <li class="list-group-item">name and email are required, you can change the email address after account is activated.</li>
-                    <li class="list-group-item">Any key-value pairs in the first level will be displayed in the main tab.</li>
-                    <li class="list-group-item">Any key-object pairs in the first level will be displayed in a new tab.</li>
+                    <li class="list-group-item">You can prepare your JSON in any valid format:</li>
+                    <li class="list-group-item">Any key-string pairs will be rendered as tabs.</li>
+                    <li class="list-group-item">Any key-object pairs will be displayed as a tab.</li>
+                    <li class="list-group-item">Any key-object pairs will be displayed as a tab.</li>
                   </ul>
                   <textarea class="form-control" rows="20">
 {
-  "name": "KanbanSystem",
-  "email": "info@kanbansystem.com",
-  "description": "A kanban system that help imporove the collaborations in corps.",
-  "pricing": {
+  "Information":  {
+    "name": "KanbanSystem",
+    "email": "info@kanbansystem.com",
+    "description": "A kanban system that imporove the collaborations in corps."
+  },
+  "Pricing": {
     "Basic" : {
       "price": 0,
       "charge frequency": "monthly",
@@ -251,7 +254,7 @@
       "telephone and onsite support": true
     }
   },
-  "contact": {
+  "Contact": {
     "Address": "1234 Water Way, Orange City, Pear Republic",
     "Telephone": "1-800-1234567",
     "Fax": "1-800-1234567",
